@@ -218,9 +218,9 @@ const CATS: ("tutti" | Cat)[] = ["tutti", "concerti", "strutture", "engineering"
 
 /* Foto piccole nella sezione contatti, una riga di presentazione a testa. */
 const team = [
-  { name: "Giorgio Sala", src: "/portfolio_gallery/team-sala.jpeg", roleIt: "Co-founder · Progetti rigging & innovazione", roleEn: "Co-founder · Rigging projects & innovation" },
-  { name: "Antonella Serra", src: "/portfolio_gallery/team-serra.jpeg", roleIt: "Co-founder · Architettura & planimetrie", roleEn: "Co-founder · Architecture & layouts" },
-  { name: "Matteo D'Angelo", src: "/portfolio_gallery/team-dangelo.jpeg", roleIt: "Co-founder · Rigging specialist", roleEn: "Co-founder · Rigging specialist" },
+  { name: "Giorgio Sala", src: "/portfolio_gallery/team-sala.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
+  { name: "Antonella Serra", src: "/portfolio_gallery/team-serra.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
+  { name: "Matteo D'Angelo", src: "/portfolio_gallery/team-dangelo.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
   { name: "Alessandra Rocco", src: "/portfolio_gallery/team-rocco.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
 ] as const;
 
