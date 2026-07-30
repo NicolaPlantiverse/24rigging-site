@@ -39,10 +39,30 @@ type Work = {
 const HERO = "/portfolio_gallery/str-11.jpeg";
 
 /* Prenotazione call: incollare qui l'URL pubblico di Cal.com o Calendly.
-   Finche' e' vuota, il pannello "Parla con un tecnico" mostra solo WhatsApp
-   ed email: nessun bottone morto. Link diretto e non embed, cosi' non si
+   Finche' e' vuota, "Prenota una call" ripiega su una email precompilata
+   (vedi bookingHref). Usare un link diretto e non un embed: cosi' non si
    caricano script di terzi sul dominio e non serve il banner cookie. */
 const BOOKING_URL = "";
+
+/* ------------------------------------------------------------------
+   CONTATTI — punto unico di modifica.
+
+   ⚠️  PROVVISORI: sono i recapiti personali di Giorgio Sala.
+   Vanno sostituiti con quelli ufficiali della societa' appena esistono
+   (casella aziendale dopo la costituzione). Cambiare qui e basta:
+   nel resto della pagina non c'e' nessun indirizzo scritto a mano.
+   ------------------------------------------------------------------ */
+const CONTACT_EMAIL = "sala.giorgio24@gmail.com";
+const CONTACT_PHONE = "+39 339 896 8874";
+const CONTACT_WHATSAPP = "393398968874";
+
+/* Il bottone "Prenota una call" punta a Cal.com/Calendly se BOOKING_URL e'
+   valorizzato, altrimenti apre una email gia' impostata con le domande che
+   servono a qualificare la richiesta. */
+function bookingHref(subject: string, body: string): string {
+  if (BOOKING_URL) return BOOKING_URL;
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 const copy = {
   it: {
@@ -113,6 +133,9 @@ const copy = {
     quoteTitle: "Contatti",
     quoteText: "Come preferisci contattarci?",
     bookBtn: "Prenota una call",
+    bookSubject: "24 Rigging — Richiesta di una call",
+    bookBody:
+      "Buongiorno,\nvorrei fissare una call con un tecnico di 24 Rigging.\n\nEvento o progetto:\nVenue e citta':\nDate previste:\nCosa c'e' da appendere:\nNome e telefono:\n\nGrazie.",
     close: "Chiudi",
     menu: "Menu",
   },
@@ -184,6 +207,9 @@ const copy = {
     quoteTitle: "Contact",
     quoteText: "How would you like to reach us?",
     bookBtn: "Book a call",
+    bookSubject: "24 Rigging — Call request",
+    bookBody:
+      "Hello,\nI would like to book a call with a 24 Rigging engineer.\n\nEvent or project:\nVenue and city:\nDates:\nWhat needs to be rigged:\nName and phone:\n\nThank you.",
     close: "Close",
     menu: "Menu",
   },
@@ -562,8 +588,8 @@ export default function StageSite() {
                   {t.contactBtn} <ArrowUpRight className="h-4 w-4" />
                 </button>
                 <div className="flex flex-wrap gap-x-5 gap-y-1 text-xs text-white/55 lg:justify-end">
-                  <a href="tel:+393398968874" className="transition-colors hover:text-white">+39 339 896 8874</a>
-                  <a href="mailto:sala.giorgio24@gmail.com" className="transition-colors hover:text-white">sala.giorgio24@gmail.com</a>
+                  <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="transition-colors hover:text-white">{CONTACT_PHONE}</a>
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-white">{CONTACT_EMAIL}</a>
                 </div>
               </div>
             </div>
@@ -619,19 +645,21 @@ export default function StageSite() {
             <div className="text-[11px] uppercase tracking-[0.32em] text-[#ead8b0]">{t.quoteTitle}</div>
             <h3 className="mt-3 text-2xl font-semibold text-white">{t.quoteText}</h3>
             <div className="mt-7 flex flex-col gap-3">
-              {BOOKING_URL ? (
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d8b46a] px-6 py-3.5 text-sm font-semibold text-[#0d0f14] transition-transform duration-300 hover:-translate-y-0.5">
-                  <CalendarClock className="h-4 w-4" /> {t.bookBtn}
-                </a>
-              ) : null}
-              <a href="https://wa.me/393398968874?text=Ciao%2C%20vorrei%20parlare%20di%20un%20progetto%20con%2024%20Rigging" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-[#06210f] transition-transform duration-300 hover:-translate-y-0.5">
+              <a
+                href={bookingHref(t.bookSubject, t.bookBody)}
+                {...(BOOKING_URL ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d8b46a] px-6 py-3.5 text-sm font-semibold text-[#0d0f14] transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                <CalendarClock className="h-4 w-4" /> {t.bookBtn}
+              </a>
+              <a href={`https://wa.me/${CONTACT_WHATSAPP}?text=Ciao%2C%20vorrei%20parlare%20di%20un%20progetto%20con%2024%20Rigging`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-[#06210f] transition-transform duration-300 hover:-translate-y-0.5">
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
-              <a href="mailto:sala.giorgio24@gmail.com?subject=24%20Rigging%20%E2%80%94%20Progetto" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:border-white/30">
+              <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("24 Rigging — Progetto")}`} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-300 hover:border-white/30">
                 <Mail className="h-4 w-4" /> Email
               </a>
             </div>
-            <div className="mt-5 text-xs tracking-wide text-white/45">+39 339 896 8874 · sala.giorgio24@gmail.com</div>
+            <div className="mt-5 text-xs tracking-wide text-white/45">{CONTACT_PHONE} · {CONTACT_EMAIL}</div>
           </div>
         </div>
       ) : null}
