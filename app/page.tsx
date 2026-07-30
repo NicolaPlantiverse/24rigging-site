@@ -8,6 +8,7 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
+  CalendarClock,
   ChevronRight,
   Crown,
   Globe2,
@@ -36,6 +37,12 @@ type Work = {
 /* Hero: un appendimento riconoscibile, non il pubblico — truss sospese su
    motori e catene. Scelta secondo il brief di A. Rocco (target B2B). */
 const HERO = "/portfolio_gallery/str-11.jpeg";
+
+/* Prenotazione call: incollare qui l'URL pubblico di Cal.com o Calendly.
+   Finche' e' vuota, il pannello "Parla con un tecnico" mostra solo WhatsApp
+   ed email: nessun bottone morto. Link diretto e non embed, cosi' non si
+   caricano script di terzi sul dominio e non serve il banner cookie. */
+const BOOKING_URL = "";
 
 const copy = {
   it: {
@@ -105,6 +112,7 @@ const copy = {
     footer: "Rigging, motion e automazione per il live.",
     quoteTitle: "Contatti",
     quoteText: "Come preferisci contattarci?",
+    bookBtn: "Prenota una call",
     close: "Chiudi",
     menu: "Menu",
   },
@@ -175,6 +183,7 @@ const copy = {
     footer: "Rigging, motion and automation for live.",
     quoteTitle: "Contact",
     quoteText: "How would you like to reach us?",
+    bookBtn: "Book a call",
     close: "Close",
     menu: "Menu",
   },
@@ -610,6 +619,11 @@ export default function StageSite() {
             <div className="text-[11px] uppercase tracking-[0.32em] text-[#ead8b0]">{t.quoteTitle}</div>
             <h3 className="mt-3 text-2xl font-semibold text-white">{t.quoteText}</h3>
             <div className="mt-7 flex flex-col gap-3">
+              {BOOKING_URL ? (
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d8b46a] px-6 py-3.5 text-sm font-semibold text-[#0d0f14] transition-transform duration-300 hover:-translate-y-0.5">
+                  <CalendarClock className="h-4 w-4" /> {t.bookBtn}
+                </a>
+              ) : null}
               <a href="https://wa.me/393398968874?text=Ciao%2C%20vorrei%20parlare%20di%20un%20progetto%20con%2024%20Rigging" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-[#06210f] transition-transform duration-300 hover:-translate-y-0.5">
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
