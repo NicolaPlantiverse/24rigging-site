@@ -101,7 +101,7 @@ const copy = {
     contactLine:
       "Sopralluoghi, calcoli, fattibilità di un appendimento: scrivici o chiamaci.",
     contactBtn: "Parla con un tecnico",
-    teamTag: "Chi siamo",
+    teamTag: "I quattro co-founder",
     footer: "Rigging, motion e automazione per il live.",
     quoteTitle: "Contatti",
     quoteText: "Come preferisci contattarci?",
@@ -171,7 +171,7 @@ const copy = {
     contactLine:
       "Site surveys, calculations, feasibility of a rig: write or call us.",
     contactBtn: "Talk to an expert",
-    teamTag: "Who we are",
+    teamTag: "The four co-founders",
     footer: "Rigging, motion and automation for live.",
     quoteTitle: "Contact",
     quoteText: "How would you like to reach us?",
@@ -218,10 +218,10 @@ const CATS: ("tutti" | Cat)[] = ["tutti", "concerti", "strutture", "engineering"
 
 /* Foto piccole nella sezione contatti, una riga di presentazione a testa. */
 const team = [
-  { name: "Giorgio Sala", src: "/portfolio_gallery/team-sala.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
-  { name: "Antonella Serra", src: "/portfolio_gallery/team-serra.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
-  { name: "Matteo D'Angelo", src: "/portfolio_gallery/team-dangelo.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
-  { name: "Alessandra Rocco", src: "/portfolio_gallery/team-rocco.jpeg", roleIt: "Co-founder", roleEn: "Co-founder" },
+  { name: "Giorgio Sala", src: "/portfolio_gallery/team-sala.jpeg", roleIt: "Progettazione & rigging", roleEn: "Design & rigging" },
+  { name: "Antonella Serra", src: "/portfolio_gallery/team-serra.jpeg", roleIt: "Architettura & planimetrie", roleEn: "Architecture & layouts" },
+  { name: "Matteo D'Angelo", src: "/portfolio_gallery/team-dangelo.jpeg", roleIt: "Operazioni in quota", roleEn: "Work at height" },
+  { name: "Alessandra Rocco", src: "/portfolio_gallery/team-rocco.jpeg", roleIt: "Produzione & vendite", roleEn: "Production & sales" },
 ] as const;
 
 /* Ordina la lista per forma: le panoramiche (≥2:1) restano singole a tutta larghezza,
