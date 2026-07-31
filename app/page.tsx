@@ -47,12 +47,11 @@ const BOOKING_URL = "";
 /* ------------------------------------------------------------------
    CONTATTI — punto unico di modifica.
 
-   ⚠️  PROVVISORI: sono i recapiti personali di Giorgio Sala.
-   Vanno sostituiti con quelli ufficiali della societa' appena esistono
-   (casella aziendale dopo la costituzione). Cambiare qui e basta:
-   nel resto della pagina non c'e' nessun indirizzo scritto a mano.
+   Casella aziendale ufficiale, attiva dopo la costituzione.
+   Cambiare qui e basta: nel resto della pagina non c'e' nessun
+   indirizzo scritto a mano.
    ------------------------------------------------------------------ */
-const CONTACT_EMAIL = "sala.giorgio24@gmail.com";
+const CONTACT_EMAIL = "info@24rigging.com";
 const CONTACT_PHONE = "+39 339 896 8874";
 const CONTACT_WHATSAPP = "393398968874";
 
