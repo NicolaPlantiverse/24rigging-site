@@ -38,11 +38,14 @@ type Work = {
    motori e catene. Scelta secondo il brief di A. Rocco (target B2B). */
 const HERO = "/portfolio_gallery/str-11.jpeg";
 
-/* Prenotazione call: incollare qui l'URL pubblico di Cal.com o Calendly.
+/* Prenotazione call: incollare qui l'URL pubblico della pagina di
+   prenotazione (Google Calendar "Appointment schedule", gratuita — vedi
+   09_DISCORD_CALENDLY/README_SETUP.md; Calendly richiederebbe un piano
+   a pagamento per l'integrazione con Discord, quindi non e' usato).
    Finche' e' vuota, "Prenota una call" ripiega su una email precompilata
    (vedi bookingHref). Usare un link diretto e non un embed: cosi' non si
    caricano script di terzi sul dominio e non serve il banner cookie. */
-const BOOKING_URL = "";
+const BOOKING_URL = "https://calendar.app.google/4cDwJhd2NbyQNyt26";
 
 /* ------------------------------------------------------------------
    CONTATTI — punto unico di modifica.
