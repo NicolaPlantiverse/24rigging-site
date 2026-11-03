@@ -241,8 +241,7 @@ const works: Work[] = [
   { src: "/portfolio_gallery/str-10.jpeg", label: "Stadio", detail: "", alt: "Stadio visto dall'alto durante l'allestimento del concerto, con tecnico in primo piano.", cat: "strutture", o: "pano" },
   // ---- Engineering (disegni tecnici, plot di carico) ----
   { src: "/portfolio_gallery/portfolio-24.jpeg", label: "Engineering", detail: "", alt: "Disegno tecnico CAD di un truss automatizzato con quote e sezioni.", cat: "engineering", o: "land" },
-  { src: "/portfolio_gallery/portfolio-25.jpeg", label: "Engineering", detail: "", alt: "Plot di carico del rigging: distribuzione dei pesi sui motori.", cat: "engineering", o: "land" },
-  { src: "/portfolio_gallery/eng-3.jpeg", label: "Engineering", detail: "", alt: "Layout CAD di progetto con pianta e griglia dei carichi.", cat: "engineering", o: "port" },
+  { src: "/portfolio_gallery/eng-3-clean.jpeg", label: "Engineering", detail: "", alt: "Layout CAD di progetto con pianta e griglia dei carichi.", cat: "engineering", o: "port" },
   // ---- Backstage / crew / high access ----
   { src: "/portfolio_gallery/bks-2.jpeg", label: "Build", detail: "", alt: "Tecnico al lavoro su una struttura con vista sullo stadio.", cat: "backstage", o: "land" },
   { src: "/portfolio_gallery/bks-1.jpeg", label: "High access", detail: "", alt: "Rigger in quota in controluce al tramonto su una struttura.", cat: "backstage", o: "port" },
